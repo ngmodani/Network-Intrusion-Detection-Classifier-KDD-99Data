@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Classify</title>
+
+
+
+    <!-- Bootstrap -->
+
+    <!-- Latest compiled and minified CSS -->
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+	
+
+<form class="form-horizontal" method="POST" action="classify">
+		<div class="form-group">
+
+    <div class="col-sm-offset-2 col-sm-10">
+
+      <button type="submit" class="btn btn-default" on-click="GetAllData()">Submit</button>
+
+    </div>
+
+  </div>
+
+</form>
+<br>
+
+<div id="tablefilter">
+
+		<table id="myTable">
+			<tr class="header">
+			<th style="width:10%;">duration</th>
+			<th style="width:10%;">protocol_type</th>
+			<th style="width:10%;">service</th>
+			<th style="width:10%;">flag</th>
+			<th style="width:10%;">src_bytes</th>
+			<th style="width:10%;">dst_bytes</th>
+			<th style="width:10%;">count</th>
+			<th style="width:10%;">logged_in</th>
+			<th style="width:10%;">serror_rate</th>
+			<th style="width:10%;">Result</th>
+		  </tr>
+		  <tr>
+		  	<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  		  
+		  {% for response in responses %}
+		  <tr>	  		
+				<td>{{responses[response]['duration']}}</td>
+				<td>{{responses[response]['protocol_type']}}></td>
+				<td>{{responses[response]['service']}}</td>
+				<td>{{responses[response]['flag']}}</td>
+				<td>{{responses[response]['src_bytes']}}</td>
+				<td>{{responses[response]['dst_bytes']}}</td>
+				<td>{{responses[response]['count']}}</td>
+				<td>{{responses[response]['logged_in']}}</td>
+				<td>{{responses[response]['serror_rate']}}</td>
+				<td>{{responses[response]['result']}}</td>
+		  </tr>			
+		  {% endfor %}		  
+		</table>
+	</div>
+
+
+		
+	</body>
+
+</html>
