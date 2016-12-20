@@ -96,7 +96,7 @@ def process(df, start, end):
         body = str.encode(json.dumps(data))
 
         url = 'https://ussouthcentral.services.azureml.net/workspaces/3e06fa1833c9420c8b0aa701d6ada435/services/c7c270b78a6f450088079b54f70e0fcb/execute?api-version=2.0&format=swagger'
-        api_key = 'q/LbCyaE+hk2Zre1RfcYdYo/7X/AMfZVNakA4LULutCD4gxDBrfksF7ooeC92kv6P0Ly+yefoK0sOqf4z/BnVw==' # Replace this with the API key for the web service
+        api_key = 'API key' # Replace this with the API key for the web service
         headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
         req = urllib.request.Request(url, body, headers)
